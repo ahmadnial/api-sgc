@@ -10,8 +10,8 @@ left join tc_mr d on c.fs_mr = d.fs_mr
 left join ta_kelas e on b.fs_kd_kelas = e.fs_kd_kelas
 left join ta_bed f on b.fs_kd_bed = f.fs_kd_bed
 left join ta_layanan g on b.fs_kd_layanan = g.fs_kd_layanan
-where b.fd_tgl_out='3000-01-01' and b.fd_tgl_void='3000-01-01' and g.fs_kd_layanan='RI004' group by d.fs_nm_pasien, d.fs_mr, g.fs_nm_layanan,
-f.fs_nm_bed, e.fs_nm_kelas, b.fd_tgl_in, b.fs_kd_reg  ";
+where b.fd_tgl_out='3000-01-01' and b.fd_tgl_void='3000-01-01' group by d.fs_nm_pasien, d.fs_mr, g.fs_nm_layanan,
+f.fs_nm_bed, e.fs_nm_kelas, b.fd_tgl_in, b.fs_kd_reg   ";
 
 $result = array();
 $query = sqlsrv_query($conn, $sql) or die(sqlsrv_errors());;
